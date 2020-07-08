@@ -1,7 +1,7 @@
 {
   "name": "@mono/template",
   "version": "0.1.0",
-  "private": false,
+  "types": "lib/App.d.ts",
   "monoEntry": "./src/App",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -22,6 +22,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "build:type": "tsc --noEmit false",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },

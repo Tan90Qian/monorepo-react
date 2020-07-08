@@ -1,9 +1,6 @@
-import React from 'react';
-import {List, Modal} from 'antd';
+import React from "react";
+import { List } from "antd";
 
 export default function ListView() {
-  return <div>
-    <List />
-    <Modal visible />
-  </div>
+  return <List />;
 }

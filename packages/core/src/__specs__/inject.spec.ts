@@ -1,4 +1,4 @@
-import { Injectable, Factory } from "./inject";
+import { Injectable, Factory } from "../inject";
 
 class OtherService {
   a = 1;
