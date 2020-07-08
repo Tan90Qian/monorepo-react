@@ -6,7 +6,9 @@
     "packages/*"
   ],
   "scripts": {
+    "postinstall": "lerna bootstrap",
     "start": "lerna exec --scope @mono/app -- npm start ",
+    "build:type": "lerna run build:type",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
