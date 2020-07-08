@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@mono/cra": "^1.0.0",
+    "babel-plugin-import": "^1.13.0",
     "react-app-rewired": "^2.1.6"
   }
 }
