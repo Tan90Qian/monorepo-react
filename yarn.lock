@@ -4738,6 +4738,13 @@ currently-unhandled@^0.4.1:
   dependencies:
     array-find-index "^1.0.1"
 
+customize-cra@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/customize-cra/download/customize-cra-1.0.0.tgz#73286563631aa08127ad4d30a2e3c89cf4e93c8d"
+  integrity sha1-cyhlY2MaoIEnrU0wouPInPTpPI0=
+  dependencies:
+    lodash.flow "^3.5.0"
+
 cyclist@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
@@ -8187,6 +8194,11 @@ lodash.clonedeep@^4.5.0:
   resolved "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
+lodash.flow@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.npm.taobao.org/lodash.flow/download/lodash.flow-3.5.0.tgz#87bf40292b8cf83e4e8ce1a3ae4209e20071675a"
+  integrity sha1-h79AKSuM+D5OjOGjrkIJ4gBxZ1o=
+
 lodash.get@^4.4.2:
   version "4.4.2"
   resolved "https://registry.npmjs.org/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
@@ -10679,6 +10691,13 @@ react-app-polyfill@^1.0.6:
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
 
+react-app-rewired@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.npm.taobao.org/react-app-rewired/download/react-app-rewired-2.1.6.tgz#33ee3076a7f34d6a7c94e649cac67e7c8c580de8"
+  integrity sha1-M+4wdqfzTWp8lOZJysZ+fIxYDeg=
+  dependencies:
+    semver "^5.6.0"
+
 react-dev-utils@^10.2.1:
   version "10.2.1"
   resolved "https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-10.2.1.tgz#f6de325ae25fa4d546d09df4bb1befdc6dd19c19"
@@ -12563,8 +12582,8 @@ typedarray@^0.0.6:
 
 typescript@^3.7.5, typescript@^3.9.6:
   version "3.9.6"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-3.9.6.tgz#8f3e0198a34c3ae17091b35571d3afd31999365a"
-  integrity sha512-Pspx3oKAPJtjNwE92YS05HQoY7z2SFyOpHo9MqJor3BXAGNaPUs83CuVp9VISFkSjyRfiTpmKuAYGJB7S7hOxw==
+  resolved "https://registry.npm.taobao.org/typescript/download/typescript-3.9.6.tgz?cache=0&sync_timestamp=1594191036891&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftypescript%2Fdownload%2Ftypescript-3.9.6.tgz#8f3e0198a34c3ae17091b35571d3afd31999365a"
+  integrity sha1-jz4BmKNMOuFwkbNVcdOv0xmZNlo=
 
 uglify-js@^3.1.4:
   version "3.10.0"
