@@ -6,6 +6,7 @@
     "packages/*"
   ],
   "scripts": {
+    "start": "lerna exec -- npm run start --scope @mono/app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
