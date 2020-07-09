@@ -12,7 +12,7 @@ function routes(props: ModuleRoute): ModuleRoute[] {
       component: Factory(TemplateListFactory).create(),
     },
     {
-      path: computePath(path, ":id/deail"),
+      path: computePath(path, ":id/detail"),
       component: Factory(TemplateDetailFactory).create(),
     },
     {

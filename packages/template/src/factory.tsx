@@ -24,12 +24,22 @@ export class TemplateListFactory {
 @Injectable()
 export class TemplateDetailFactory {
   constructor(
-    private store: TemplateStore,
-    private presenter: TemplatePresenter
+    private store: FormStore<IModel>,
+    private presenter: FormPresenter<IModel>
   ) {}
 
+  didMount() {
+    this.presenter.onChange(this.store, { name: "test" });
+  }
+
   create() {
-    return observer(() => <DetailView title="detail" />);
+    return observer(() => (
+      <DetailView
+        title="detail"
+        data={this.store.value}
+        didMount={this.didMount.bind(this)}
+      />
+    ));
   }
 }
 
