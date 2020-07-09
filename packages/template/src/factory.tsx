@@ -16,8 +16,18 @@ export class TemplateListFactory {
     private presenter: TemplatePresenter
   ) {}
 
+  async didMount() {
+    const data = await this.presenter.fetchList();
+    this.presenter.setList(this.store, data);
+  }
+
   create() {
-    return observer(() => <ListView />);
+    return observer(() => (
+      <ListView
+        dataSource={this.store.list}
+        didMount={this.didMount.bind(this)}
+      />
+    ));
   }
 }
 
@@ -25,18 +35,20 @@ export class TemplateListFactory {
 export class TemplateDetailFactory {
   constructor(
     private store: FormStore<IModel>,
-    private presenter: FormPresenter<IModel>
+    private presenter: TemplatePresenter,
+    private formPresenter: FormPresenter<IModel>
   ) {}
 
-  didMount() {
-    this.presenter.onChange(this.store, { name: "test" });
+  async didMount() {
+    const data = await this.presenter.fetchDetail();
+    this.formPresenter.initial(this.store, data);
   }
 
   create() {
     return observer(() => (
       <DetailView
         title="detail"
-        data={this.store.value}
+        dataSource={this.store.value}
         didMount={this.didMount.bind(this)}
       />
     ));
@@ -47,14 +59,18 @@ export class TemplateDetailFactory {
 export class TemplateFormFactory {
   constructor(
     private store: FormStore<IModel>,
-    private presenter: FormPresenter<IModel>
+    private presenter: TemplatePresenter,
+    private formPresenter: FormPresenter<IModel>
   ) {}
 
+  async didMount() {
+    const data = await this.presenter.fetchDetail();
+    this.formPresenter.initial(this.store, data);
+  }
+
   onChange(changedFields: FieldData[], allFields: FieldData[]) {
-    this.presenter.onChange(
-      this.store,
-      this.presenter.transformFieldsToValue(allFields)
-    );
+    const value = this.formPresenter.transformFieldsToValue(allFields);
+    this.formPresenter.onChange(this.store, value);
   }
 
   create() {
@@ -62,6 +78,7 @@ export class TemplateFormFactory {
       <FormView
         fields={this.store.fields}
         onChange={this.onChange.bind(this)}
+        didMount={this.didMount.bind(this)}
       />
     ));
   }

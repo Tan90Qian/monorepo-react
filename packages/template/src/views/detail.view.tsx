@@ -4,20 +4,20 @@ import { IModel } from "../interface";
 
 interface TemplateDetailProps {
   title?: string;
-  data?: IModel;
+  dataSource?: IModel;
   didMount: Function;
 }
 
 export default function TemplateDetail(props: TemplateDetailProps) {
-  const { title, data, didMount } = props;
+  const { title, dataSource, didMount } = props;
 
   useEffect(() => {
     didMount();
   }, []);
   return (
     <Descriptions title={title}>
-      {data &&
-        Object.entries(data).map(([key, value]) => (
+      {dataSource &&
+        Object.entries(dataSource).map(([key, value]) => (
           <Descriptions.Item key={key} label={key}>
             {value}
           </Descriptions.Item>
