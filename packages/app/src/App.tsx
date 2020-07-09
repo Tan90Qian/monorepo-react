@@ -1,8 +1,8 @@
 import React from "react";
 import { Layout } from "antd";
-
-import Template from "@mono/template";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
+import { renderRoutes } from "react-router-config";
+import { routerConfig } from "./router";
 
 const { Header, Content, Sider, Footer } = Layout;
 
@@ -12,13 +12,9 @@ function App() {
       <Layout>
         <Header>Header</Header>
         <Layout>
-          <Sider>Sider</Sider>
+          <Sider theme="light">Sider</Sider>
           <Content>
-            <Router>
-              <Switch>
-                <Route path="/" component={Template}></Route>
-              </Switch>
-            </Router>
+            <Router>{renderRoutes(routerConfig)}</Router>
           </Content>
         </Layout>
         <Footer>Footer</Footer>
