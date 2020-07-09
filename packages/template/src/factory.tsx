@@ -22,8 +22,9 @@ export class TemplateListFactory {
   }
 
   create() {
-    return observer(() => (
+    return observer((props: any) => (
       <ListView
+        {...props}
         dataSource={this.store.list}
         didMount={this.didMount.bind(this)}
       />
@@ -45,8 +46,9 @@ export class TemplateDetailFactory {
   }
 
   create() {
-    return observer(() => (
+    return observer((props: any) => (
       <DetailView
+        {...props}
         title="detail"
         dataSource={this.store.value}
         didMount={this.didMount.bind(this)}
@@ -74,8 +76,9 @@ export class TemplateFormFactory {
   }
 
   create() {
-    return observer(() => (
+    return observer((props: any) => (
       <FormView
+        {...props}
         fields={this.store.fields}
         onChange={this.onChange.bind(this)}
         didMount={this.didMount.bind(this)}

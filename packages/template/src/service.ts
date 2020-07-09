@@ -6,11 +6,12 @@ export default class TemplateService implements IService {
   constructor(private engine: any) {}
 
   fetchList() {
-    return [{ name: "test" }];
+    return [{ id: 1, name: "test" }];
   }
 
   fetchDetail() {
     return {
+      id: 1,
       name: "test",
     };
   }
