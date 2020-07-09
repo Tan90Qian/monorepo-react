@@ -2,6 +2,7 @@ import React from "react";
 import { Layout } from "antd";
 
 import Template from "@mono/template";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 const { Header, Content, Sider, Footer } = Layout;
 
@@ -13,7 +14,11 @@ function App() {
         <Layout>
           <Sider>Sider</Sider>
           <Content>
-            <Template />
+            <Router>
+              <Switch>
+                <Route path="/" component={Template}></Route>
+              </Switch>
+            </Router>
           </Content>
         </Layout>
         <Footer>Footer</Footer>

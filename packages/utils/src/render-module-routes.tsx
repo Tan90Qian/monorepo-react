@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { RouteProps, Switch, Route } from "react-router";
 
-interface ModuleRoute extends RouteProps {
+export interface ModuleRoute extends RouteProps {
   mode?: "modal" | "view";
   key?: string | number;
 }

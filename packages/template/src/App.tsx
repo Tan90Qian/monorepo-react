@@ -1,7 +1,8 @@
-import React from "react";
-import TemplateFactory from "./factory";
-import { Factory } from "@mono/core";
+import { RouteComponentProps } from "react-router";
+import router from "./router";
+import { renderModuleRoutes } from "@mono/utils";
 
-const App = Factory(TemplateFactory).create();
+const App = (props: RouteComponentProps) =>
+  renderModuleRoutes(router(props.match), false);
 
 export default App;
