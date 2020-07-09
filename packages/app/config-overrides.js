@@ -4,6 +4,7 @@ const {
   customBabelLoaderInclude,
   fixBabelImports,
   addExternalBabelPlugin,
+  addBabelPlugin,
 } = require("@mono/cra");
 
 const fixExternalBabelImports = (libraryName, options) =>
@@ -21,6 +22,7 @@ const fixExternalBabelImports = (libraryName, options) =>
 
 module.exports = {
   webpack(config) {
+    addBabelPlugin("babel-plugin-transform-typescript-metadata")(config);
     fixBabelImports("antd", {
       libraryName: "antd",
       libraryDirectory: "es",

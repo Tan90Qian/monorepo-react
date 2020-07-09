@@ -1,7 +1,8 @@
-const { customEntryConfig, fixBabelImports } = require("@mono/cra");
+const { customEntryConfig, fixBabelImports, addBabelPlugin } = require("@mono/cra");
 
 module.exports = {
   webpack(config) {
+    addBabelPlugin('babel-plugin-transform-typescript-metadata')(config);
     fixBabelImports("antd", {
       libraryName: "antd",
       libraryDirectory: "es",
