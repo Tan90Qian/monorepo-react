@@ -1,7 +1,15 @@
 import { computePath, ModuleRoute } from "@mono/utils";
 
-import { TemplateDetailFactory, TemplateListFactory, TemplateFormFactory } from "./factory";
+import {
+  TemplateDetailFactory,
+  TemplateListFactory,
+  TemplateFormFactory,
+} from "./factory";
 import { Factory } from "@mono/core";
+
+const TemplateList = Factory(TemplateListFactory).create();
+const TemplateDetail = Factory(TemplateDetailFactory).create();
+const TemplateForm = Factory(TemplateFormFactory).create();
 
 function routes(props: ModuleRoute): ModuleRoute[] {
   const path = props.path as string;
@@ -9,15 +17,15 @@ function routes(props: ModuleRoute): ModuleRoute[] {
     {
       path: computePath(path),
       exact: true,
-      component: Factory(TemplateListFactory).create(),
+      component: TemplateList,
     },
     {
       path: computePath(path, ":id/detail"),
-      component: Factory(TemplateDetailFactory).create(),
+      component: TemplateDetail,
     },
     {
       path: computePath(path, ":id/edit"),
-      component: Factory(TemplateFormFactory).create(),
+      component: TemplateForm,
     },
   ];
 }

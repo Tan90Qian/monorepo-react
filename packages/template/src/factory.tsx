@@ -22,12 +22,9 @@ export class TemplateListFactory {
   }
 
   create() {
+    const didMount = this.didMount.bind(this);
     return observer((props: any) => (
-      <ListView
-        {...props}
-        dataSource={this.store.list}
-        didMount={this.didMount.bind(this)}
-      />
+      <ListView {...props} dataSource={this.store.list} didMount={didMount} />
     ));
   }
 }
@@ -46,12 +43,13 @@ export class TemplateDetailFactory {
   }
 
   create() {
+    const didMount = this.didMount.bind(this);
     return observer((props: any) => (
       <DetailView
         {...props}
         title="detail"
         dataSource={this.store.value}
-        didMount={this.didMount.bind(this)}
+        didMount={didMount}
       />
     ));
   }
@@ -71,17 +69,20 @@ export class TemplateFormFactory {
   }
 
   onChange(changedFields: FieldData[], allFields: FieldData[]) {
+    console.log('change')
     const value = this.formPresenter.transformFieldsToValue(allFields);
     this.formPresenter.onChange(this.store, value);
   }
 
   create() {
+    const onChange = this.onChange.bind(this);
+    const didMount = this.didMount.bind(this);
     return observer((props: any) => (
       <FormView
         {...props}
         fields={this.store.fields}
-        onChange={this.onChange.bind(this)}
-        didMount={this.didMount.bind(this)}
+        onChange={onChange}
+        didMount={didMount}
       />
     ));
   }
