@@ -1,5 +1,5 @@
 {
-  "name": "monorepo-react",
+  "name": "pcr-union-war",
   "version": "1.0.0",
   "description": "",
   "workspaces": [
@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "postinstall": "lerna bootstrap",
+    "commit": "git-cz",
     "start": "lerna exec --scope @mono/app -- npm start ",
     "build:type": "lerna run build:type",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,8 +16,24 @@
   "author": "",
   "private": true,
   "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2",
     "@types/testing-library__dom": "^7.5.0",
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "husky": "^4.2.5",
     "lerna": "^3.22.1",
+    "lint-staged": "^10.2.11",
     "typescript": "^3.9.6"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
