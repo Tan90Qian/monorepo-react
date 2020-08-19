@@ -3,7 +3,7 @@ import { Layout } from "antd";
 import { HashRouter as Router } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 
-import { AppMenu } from "@mono/layouts";
+import { AppMenu } from "@pcr/layouts";
 import 'antd/dist/antd.css'
 
 import { routerConfig } from "./router";

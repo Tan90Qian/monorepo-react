@@ -1,9 +1,26 @@
-import { IService } from "./interface";
-import { Injectable } from "@mono/core";
+import { gqlInstance } from "@pcr/core";
+import { gql } from "@apollo/client";
 
-@Injectable()
+import { IService } from "./interface";
+
 export default class TemplateService implements IService {
-  constructor(private engine: any) {}
+  private engine: typeof gqlInstance;
+  constructor() {
+    this.engine = gqlInstance;
+  }
+
+  fetchRecipes() {
+    return this.engine.query({
+      query: gql`
+        {
+          recipes {
+            id
+            title
+          }
+        }
+      `,
+    });
+  }
 
   fetchList() {
     return [{ id: 1, name: "test" }];

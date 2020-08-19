@@ -1,4 +1,4 @@
-const { customEntryConfig, fixBabelImports, addBabelPlugin } = require("@mono/cra");
+const { customEntryConfig, fixBabelImports, addBabelPlugin } = require("@pcr/cra");
 
 module.exports = {
   webpack(config) {

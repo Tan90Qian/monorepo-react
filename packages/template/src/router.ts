@@ -1,11 +1,11 @@
-import { computePath, ModuleRoute } from "@mono/utils";
+import { computePath, ModuleRoute } from "@pcr/utils";
 
 import {
   TemplateDetailFactory,
   TemplateListFactory,
   TemplateFormFactory,
 } from "./factory";
-import { Factory } from "@mono/core";
+import { Factory } from "@pcr/core";
 
 const TemplateList = Factory(TemplateListFactory).create();
 const TemplateDetail = Factory(TemplateDetailFactory).create();

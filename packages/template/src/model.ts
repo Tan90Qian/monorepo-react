@@ -1,6 +1,6 @@
 import { observable, action } from "mobx";
 import { IStore, IPresenter, IModel } from "./interface";
-import { Injectable } from "@mono/core";
+import { Injectable } from "@pcr/core";
 import TemplateService from "./service";
 
 export class TemplateStore implements IStore {

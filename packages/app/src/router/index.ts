@@ -1,5 +1,5 @@
-import { RouterConfig } from "@mono/layouts";
-import Template from "@mono/template";
+import { RouterConfig } from "@pcr/layouts";
+import Template from "@pcr/template";
 
 export const routerConfig: RouterConfig = [
   {

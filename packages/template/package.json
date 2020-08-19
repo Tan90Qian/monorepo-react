@@ -1,5 +1,5 @@
 {
-  "name": "@mono/template",
+  "name": "@pcr/template",
   "version": "0.1.0",
   "types": "lib/App.d.ts",
   "monoEntry": "./src/App",
@@ -44,11 +44,12 @@
     ]
   },
   "devDependencies": {
-    "@mono/cra": "^1.0.0",
+    "@pcr/cra": "^1.0.0",
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.5",
     "babel-plugin-import": "^1.13.0",
     "babel-plugin-transform-typescript-metadata": "^0.3.0",
+    "http-proxy-middleware": "^1.0.5",
     "react-app-rewired": "^2.1.6"
   }
 }

@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { History } from "history";
 
-import { computePath } from "@mono/utils";
+import { computePath } from "@pcr/utils";
 
 interface useGoEditParmas {
   path: string;

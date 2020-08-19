@@ -4,7 +4,7 @@ import { MenuProps } from "antd/lib/menu";
 
 import { NavLink } from "react-router-dom";
 
-import { computePath } from "@mono/utils";
+import { computePath } from "@pcr/utils";
 
 import { RouterConfig } from "./interface";
 

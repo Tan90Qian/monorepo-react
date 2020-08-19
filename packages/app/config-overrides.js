@@ -5,7 +5,7 @@ const {
   fixBabelImports,
   addExternalBabelPlugin,
   addBabelPlugin,
-} = require("@mono/cra");
+} = require("@pcr/cra");
 
 const fixExternalBabelImports = (libraryName, options) =>
   addExternalBabelPlugin([

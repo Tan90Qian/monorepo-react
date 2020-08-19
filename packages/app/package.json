@@ -1,9 +1,9 @@
 {
-  "name": "@mono/app",
+  "name": "@pcr/app",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
-    "@mono/template": "^0.1.0",
+    "@pcr/template": "^0.1.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -42,12 +42,13 @@
     ]
   },
   "devDependencies": {
-    "@mono/cra": "^1.0.0",
+    "@pcr/cra": "^1.0.0",
     "@types/react-router": "^5.1.8",
     "@types/react-router-config": "^5.0.1",
     "@types/react-router-dom": "^5.1.5",
     "babel-plugin-import": "^1.13.0",
     "babel-plugin-transform-typescript-metadata": "^0.3.0",
+    "http-proxy-middleware": "^1.0.5",
     "react-app-rewired": "^2.1.6"
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
 import { FieldData } from "rc-field-form/lib/interface";
-import { Injectable, FormStore, FormPresenter } from "@mono/core";
+import { Injectable, FormStore, FormPresenter } from "@pcr/core";
 
 import { TemplateStore, TemplatePresenter } from "./model";
 import { IModel } from "./interface";
