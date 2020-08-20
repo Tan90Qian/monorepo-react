@@ -20,6 +20,10 @@ function routes(props: ModuleRoute): ModuleRoute[] {
       component: TemplateList,
     },
     {
+      path: computePath(path, "add"),
+      component: TemplateForm,
+    },
+    {
       path: computePath(path, ":id/detail"),
       component: TemplateDetail,
     },

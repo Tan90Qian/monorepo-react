@@ -37,8 +37,8 @@ export class TemplateDetailFactory {
     private formPresenter: FormPresenter<IModel>
   ) {}
 
-  async didMount() {
-    const data = await this.presenter.fetchDetail();
+  async didMount(id: string) {
+    const data = await this.presenter.fetchDetail(id);
     this.formPresenter.initial(this.store, data);
   }
 
@@ -63,24 +63,31 @@ export class TemplateFormFactory {
     private formPresenter: FormPresenter<IModel>
   ) {}
 
-  async didMount() {
-    const data = await this.presenter.fetchDetail();
-    this.formPresenter.initial(this.store, data);
+  async didMount(id?: string) {
+    if (id) {
+      const data = await this.presenter.fetchDetail(id);
+      this.formPresenter.initial(this.store, data);
+    }
   }
 
   onChange(changedFields: FieldData[], allFields: FieldData[]) {
-    console.log('change')
     const value = this.formPresenter.transformFieldsToValue(allFields);
     this.formPresenter.onChange(this.store, value);
+  }
+
+  onFinish(value: IModel) {
+    this.presenter.addRecipe(value).then((res) => console.log(res));
   }
 
   create() {
     const onChange = this.onChange.bind(this);
     const didMount = this.didMount.bind(this);
+    const onFinish = this.onFinish.bind(this);
     return observer((props: any) => (
       <FormView
         {...props}
         fields={this.store.fields}
+        onFinish={onFinish}
         onChange={onChange}
         didMount={didMount}
       />

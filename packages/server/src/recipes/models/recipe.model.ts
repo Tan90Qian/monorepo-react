@@ -21,7 +21,7 @@ export class Recipe extends Document {
   @Prop()
   creationDate: Date;
 
-  @Field(type => [String])
+  @Field(type => [String], { nullable: true })
   @Prop()
   ingredients: string[];
 }

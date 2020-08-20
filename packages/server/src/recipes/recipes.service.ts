@@ -20,7 +20,7 @@ export class RecipesService {
   }
 
   async findOneById(id: string): Promise<Recipe> {
-    return this.recipeModel.findById(id).exec();
+    return this.recipeModel.findOne({id}).exec();
   }
 
   async findAll(recipesArgs: RecipesArgs): Promise<Recipe[]> {

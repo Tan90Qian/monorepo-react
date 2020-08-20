@@ -27,18 +27,30 @@ export default class TemplateService implements IService {
     return [{ id: 1, title: "test" }];
   }
 
-  fetchDetail() {
-    return {
-      id: "1",
-      title: "test",
-    };
+  async fetchDetail(id: string) {
+    const res = await this.engine.query({
+      query: gql`
+        {
+          recipe(id: "${id}") {
+            id
+            title,
+            description
+          }
+        }
+      `,
+    });
+    return res.data.recipe;
   }
 
   addRecipe(data: IModel) {
     return this.engine.mutate({
       mutation: gql`
         mutation {
-          addRecipe(newRecipeData: ${data}) {
+          addRecipe(newRecipeData: {
+            title: "${data.title}",
+            description: "${data.description}"
+          }) {
+            id
           }
         }
       `,

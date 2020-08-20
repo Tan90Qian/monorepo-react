@@ -27,3 +27,10 @@ export function useGoDetail(params: useGoEditParmas) {
     [path, history]
   );
 }
+
+export function useGoAdd(params: useGoEditParmas) {
+  const { path, history } = params;
+  return useCallback(() => {
+    history.push(computePath(path, `add`));
+  }, [path, history]);
+}
