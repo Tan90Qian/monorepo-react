@@ -5,6 +5,9 @@ export interface IPresenter {}
 export interface IService {}
 
 export interface IModel {
-  id: string | number;
-  name?: string;
+  id: string;
+  title: string;
+  description?: string;
+  creationDate?: string;
+  ingredients?: string[];
 }

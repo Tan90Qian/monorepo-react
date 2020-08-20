@@ -1,7 +1,7 @@
 import { gqlInstance } from "@pcr/core";
 import { gql } from "@apollo/client";
 
-import { IService } from "./interface";
+import { IService, IModel } from "./interface";
 
 export default class TemplateService implements IService {
   private engine: typeof gqlInstance;
@@ -9,8 +9,8 @@ export default class TemplateService implements IService {
     this.engine = gqlInstance;
   }
 
-  fetchRecipes() {
-    return this.engine.query({
+  async fetchRecipes() {
+    const res = await this.engine.query({
       query: gql`
         {
           recipes {
@@ -20,16 +20,28 @@ export default class TemplateService implements IService {
         }
       `,
     });
+    return res.data.recipes;
   }
 
   fetchList() {
-    return [{ id: 1, name: "test" }];
+    return [{ id: 1, title: "test" }];
   }
 
   fetchDetail() {
     return {
-      id: 1,
-      name: "test",
+      id: "1",
+      title: "test",
     };
+  }
+
+  addRecipe(data: IModel) {
+    return this.engine.mutate({
+      mutation: gql`
+        mutation {
+          addRecipe(newRecipeData: ${data}) {
+          }
+        }
+      `,
+    });
   }
 }

@@ -36,7 +36,7 @@ export default function TemplateList(props: TemplateListProps) {
             <span onClick={() => goEdit(item.id)}>编辑</span>,
           ]}
         >
-          {item.name}
+          {item.title}
         </List.Item>
       )}
     />

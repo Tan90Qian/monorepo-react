@@ -13,8 +13,8 @@ export class TemplateStore implements IStore {
 export class TemplatePresenter implements IPresenter {
   constructor(private service: TemplateService) {}
 
-  fetchList() {
-    return this.service.fetchList();
+  async fetchList() {
+    return this.service.fetchRecipes();
   }
 
   fetchDetail() {

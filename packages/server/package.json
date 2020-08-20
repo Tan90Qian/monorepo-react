@@ -23,6 +23,7 @@
     "@nestjs/common": "^6.7.2",
     "@nestjs/core": "^6.7.2",
     "@nestjs/graphql": "^7.6.0",
+    "@nestjs/mongoose": "^7.0.2",
     "@nestjs/platform-express": "^6.7.2",
     "apollo-server": "^2.16.1",
     "apollo-server-express": "^2.16.1",
@@ -30,10 +31,12 @@
     "dataloader": "^2.0.0",
     "graphql": "^15.3.0",
     "graphql-tools": "^6.0.18",
+    "mongoose": "^5.10.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.3",
-    "type-graphql": "^1.0.0-rc.3"
+    "type-graphql": "^1.0.0-rc.3",
+    "uuid": "^8.3.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^6.9.0",
@@ -41,6 +44,7 @@
     "@nestjs/testing": "^6.7.1",
     "@types/express": "^4.17.1",
     "@types/jest": "^24.0.18",
+    "@types/mongoose": "^5.7.36",
     "@types/node": "^12.7.5",
     "@types/supertest": "^2.0.8",
     "jest": "^24.9.0",
