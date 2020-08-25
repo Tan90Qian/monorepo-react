@@ -28,16 +28,19 @@ export default class TemplateService implements IService {
   }
 
   async fetchDetail(id: string) {
-    const res = await this.engine.query({
+    const res = await this.engine.query<any, { id: string }>({
       query: gql`
-        {
-          recipe(id: "${id}") {
+        query Recipe($id: String!) {
+          recipe(id: $id) {
             id
-            title,
+            title
             description
           }
         }
       `,
+      variables: {
+        id,
+      },
     });
     return res.data.recipe;
   }

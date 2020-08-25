@@ -1,0 +1,16 @@
+version: "0.1.0"
+services:
+  pcr-db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./packages/db/data_dev:/data/db
+  pcr-server:
+    build: ./packages/server/Dockerfile.dev
+    ports:
+      - "4000:4000"
+  pcr-fe:
+    build: ./Dockerfile.dev
+    ports:
+      - "3000:3000"
