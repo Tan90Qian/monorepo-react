@@ -2,16 +2,20 @@ version: "3.7"
 services:
   db:
     image: mongo
-    container_name: pcr-db-dev
-    ports:
-      - "27017:27017"
+    container_name: pcr-db
+    restart: always
+    expose:
+      - "27017"
     volumes:
-      - ./packages/db/data_dev:/data/db
+      - ./packages/db/data:/data/db
   server:
     build:
       context: ./packages/server/
-      dockerfile: Dockerfile.dev
-    container_name: pcr-server-dev
+      dockerfile: Dockerfile
+    container_name: pcr-server
+    restart: always
+    links:
+      - db
     depends_on:
       - db
     ports:
@@ -24,7 +28,8 @@ services:
       dockerfile: Dockerfile.dev
     stdin_open: true
     container_name: pcr-web-dev
+    restart: always
     ports:
       - "3000:3000"
     environment:
-       PROXY_PORT: 4000
+      PROXY_PORT: 4000
