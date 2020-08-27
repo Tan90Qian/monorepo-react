@@ -1,16 +1,25 @@
-version: "0.1.0"
+version: "3.7"
 services:
-  pcr-db:
+  db:
     image: mongo
+    container_name: pcr-db-dev
     ports:
       - "27017:27017"
     volumes:
       - ./packages/db/data_dev:/data/db
-  pcr-server:
-    build: ./packages/server/Dockerfile.dev
+  server:
+    build:
+      context: ./packages/server/
+      dockerfile: Dockerfile.dev
+    container_name: pcr-server-dev
+    depends_on:
+      - db
     ports:
       - "4000:4000"
-  pcr-fe:
-    build: ./Dockerfile.dev
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    container_name: pcr-web-dev
     ports:
       - "3000:3000"
